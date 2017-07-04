@@ -20,7 +20,7 @@ class TodoTransformer extends TransformerAbstract
             'id' => $todo->id,
             'title' => $todo->name,
             'completed' => (boolean) $todo->completed,
-            'due_at' => (int) $todo->due_at->timestamp,
+            'due_at' => isset($todo->due_at) ? $todo->due_at->timestamp : null,
         ];
     }
 }
